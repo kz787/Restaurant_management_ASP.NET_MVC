@@ -1,0 +1,82 @@
+﻿@model rest.Models.Product
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<style>
+    body {
+        background-color: #8B4513; 
+        background-image: radial-gradient(circle, #D2B48C, #8B4513); 
+        color: #fff; 
+        font-family: Baskerville;
+        margin: 0; 
+        padding: 0; 
+    }
+
+    
+    .row {
+        margin-top: 20px; 
+    }
+
+        .row dt {
+            color: #fff;
+        }
+
+        .row dd {
+            color: #654321;
+        }
+
+    .btn-danger {
+        background-color: #8B4513; 
+        border-color: #8B4513; 
+        border-radius: 20px;
+        font-size: 14px;
+        padding: 8px 15px;
+        cursor: pointer;
+    }
+
+        .btn-danger:hover {
+            background-color: #CD5C5C; 
+            border-color: #CD5C5C; 
+        }
+</style>
+
+
+
+<h3>Are you sure you want to remove this item from menu?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger"  /> |
+        <a asp-action="Index" style="color: white;">Back to List</a>
+    </form>
+</div>
